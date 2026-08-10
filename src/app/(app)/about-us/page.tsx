@@ -1,0 +1,7 @@
+export default function AboutUs () {
+    return (
+        <main className="p-5 md:px-10">
+            aboutus
+        </main>
+    );
+}
