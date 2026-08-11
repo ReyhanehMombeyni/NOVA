@@ -6,10 +6,10 @@ import Link from "next/link";
 export default function signupPage() {
   return (
     <main className="min-h-screen flex justify-center items-center bg-gray-950 p-4">
-      <div className="w-full max-w-md md:max-w-lg ronded-lg bg-gray-900 shadow-lg p-8">
-        <div className="mb-3 md:mb-6 text-center">
+      <div className="w-full max-w-md md:max-w-lg ronded-lg bg-gray-900 shadow-lg px-4 py-8 md:px-8">
+        <div className="mb-10 text-center">
           <Icons.logo className="mx-auto h-12 w-12" />
-          <h2 className="mt-2 md:mt-4 text-lg md:text-2xl font-bold text-white">
+          <h2 className="mt-2 md:mt-4 text-lg md:text-2xl font-bold font-heading text-white">
             Welcome to NOVA
           </h2>
         </div>

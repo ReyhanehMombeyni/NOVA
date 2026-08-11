@@ -12,7 +12,9 @@ import {
   LogOut, 
   Settings,
   BadgeCheckIcon,
-  LogInIcon
+  LogInIcon,
+  EyeIcon,
+  EyeOff
 } from "lucide-react";
 
 export const Icons = {
@@ -35,4 +37,6 @@ export const Icons = {
   setting: Settings,
   badgeCheckIcon: BadgeCheckIcon,
   login: LogInIcon,
+  eyeIcon: EyeIcon,
+  eyeOff: EyeOff
 };

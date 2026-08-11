@@ -4,8 +4,6 @@ import { Logo, ThemeToggle } from "../shared";
 import { menuItem } from "@/constant";
 import { UserMenu } from "./userMenu";
 
-
-
 export const Navbar = () => {
     return(
         <nav className="p-5 shadow-sm dark:shadow-slate-900 w-full">
@@ -26,7 +24,7 @@ export const Navbar = () => {
             <div className="md:hidden w-full">
                 <ul className="flex justify-center items-center space-x-1 pt-4">
                         {
-                            menuItem.map(({id, text, href}) => <li key={id} className="px-3"><Link href={href}>{text}</Link></li>)
+                            menuItem.map(({id, text, href}) => <li key={id} className="px-3 text-sm"><Link href={href}>{text}</Link></li>)
                         }
                     </ul>
             </div>

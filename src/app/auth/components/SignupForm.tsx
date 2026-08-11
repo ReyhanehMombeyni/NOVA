@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -10,6 +11,8 @@ import { SignupDataType, SignupSchema } from "@/schema/zodSchema";
 import { signupApi } from "@/services/authApi";
 
 export const SignupForm = () => {
+
+  const [isHide, setIsHide] = useState(true);
 
   const {
     register,
@@ -33,7 +36,6 @@ export const SignupForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
       <div>
-        <div className="flex items-center gap-4">
           <div>
             <Label htmlFor="username" className="text-gray-100">
               UserName
@@ -47,12 +49,15 @@ export const SignupForm = () => {
                 type="text"
                 {...register("username")}
                 placeholder="your username..."
-                className="pl-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+                className="pl-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-xs sm:placeholder:text-sm placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
                 disabled={isPending}
               />
             </div>
+            {errors.username && (
+            <p className="text-red-500 text-xs sm:text-sm">{errors.username.message}</p>
+          )}
           </div>
-          <div>
+          <div className="pt-4">
             <Label htmlFor="email" className="text-gray-100">
               Email address
             </Label>
@@ -66,20 +71,17 @@ export const SignupForm = () => {
                 {...register("email")}
                 placeholder="email@email.com"
                 required
-                className="pl-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+                className="pl-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-xs sm:placeholder:text-sm placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
                 disabled={isPending}
               />
             </div>
+            {errors.email && (
+            <p className="text-red-500 text-xs sm:text-sm">{errors.email.message}</p>
+            )}
           </div>
-        </div>
-          {errors.username && (
-            <p className="text-red-500">{errors.username.message}</p>
-          )}
-          {errors.email && (
-            <p className="text-red-500">{errors.email.message}</p>
-          )}
-        <div className="flex items-center gap-4 pt-4">
-          <div>
+          
+        <div className="w-full flex flex-col md:flex-row items-center gap-4 pt-4">
+          <div className="w-full">
             <Label htmlFor="password" className="text-gray-100">
               Password
             </Label>
@@ -89,15 +91,21 @@ export const SignupForm = () => {
               </div>
               <Input
                 id="password"
-                type="password"
+                type={isHide ? "password" : "text"}
                 {...register("password")}
                 placeholder="••••••••"
-                className="pl-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+                className="pl-10 pr-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-xs sm:placeholder:text-sm placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
                 disabled={isPending}
               />
+            <button type="button" onClick={() => setIsHide(!isHide)} className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center cursor-pointer">
+              {
+                isHide ? <Icons.eyeIcon className="h-4 w-4 text-gray-400" /> : <Icons.eyeOff className="h-4 w-4 text-gray-400" />
+              }
+              
+            </button>
             </div>
           </div>
-          <div>
+          <div className="w-full">
             <Label htmlFor="confirmPassword" className="text-gray-100">
               Confirm Password
             </Label>
@@ -107,20 +115,27 @@ export const SignupForm = () => {
               </div>
               <Input
                 id="confirmPassword"
-                type="password"
+                type={isHide ? "password" : "text"}
                 {...register("confirmPassword")}
                 placeholder="••••••••"
-                className="pl-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+                className="pl-10 pr-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-xs sm:placeholder:text-sm placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
                 disabled={isPending}
               />
+            <button type="button" onClick={() => setIsHide(!isHide)} className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center cursor-pointer">
+              {
+                isHide ? <Icons.eyeIcon className="h-4 w-4 text-gray-400" /> : <Icons.eyeOff className="h-4 w-4 text-gray-400" />
+              }
+              
+            </button>
             </div>
           </div>
         </div>
           {errors.password && (
-            <p className="text-red-500">{errors.password.message}</p>
-          )}
+            <p className="text-red-500 text-xs sm:text-sm">{errors.password.message}</p>
+          )
+          }
           {errors.confirmPassword && (
-            <p className="text-red-500">{errors.confirmPassword.message}</p>
+            <p className="text-red-500 text-xs sm:text-sm">{errors.confirmPassword.message}</p>
           )}
         <Button
           type="submit"
@@ -128,7 +143,7 @@ export const SignupForm = () => {
         >
           Signup
         </Button>
-        {isError && <div className="text-red-500">{error.message}</div>}
+        {isError && <div className="text-red-500 text-xs sm:text-sm">{error.message}</div>}
       </div>
     </form>
   );

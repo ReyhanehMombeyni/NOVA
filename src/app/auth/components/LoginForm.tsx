@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -10,6 +11,8 @@ import { loginApi } from "@/services/authApi";
 import { useAuth } from "@/hooks/auth/useAuth";
 
 export const LoginForm = () => {
+
+  const [isHide, setIsHide] = useState(true);
 
   const {
     register,
@@ -50,12 +53,12 @@ export const LoginForm = () => {
               type="email"
               {...register("identifier")}
               placeholder="email@email.com"
-              className="pl-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+              className="pl-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-xs sm:placeholder:text-sm placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
               disabled={isPending}
             />
           </div>
           {errors.identifier && (
-            <p className="text-red-500">{errors.identifier.message}</p>
+            <p className="text-red-500 text-xs sm:text-sm">{errors.identifier.message}</p>
           )}
         </div>
         <div>
@@ -68,15 +71,21 @@ export const LoginForm = () => {
             </div>
             <Input
               id="password"
-              type="password"
+              type={isHide ? "password" : "text"}
               {...register("password")}
               placeholder="••••••••"
-              className="pl-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
+              className="pl-10 pr-10 h-10 bg-neutral-900 border-neutral-700 text-white placeholder:text-xs sm:placeholder:text-sm placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500"
               disabled={isPending}
             />
+            <button type="button" onClick={() => setIsHide(!isHide)} className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center cursor-pointer">
+              {
+                isHide ? <Icons.eyeIcon className="h-4 w-4 text-gray-400" /> : <Icons.eyeOff className="h-4 w-4 text-gray-400" />
+              }
+              
+            </button>
           </div>
           {errors.password && (
-            <p className="text-red-500">{errors.password.message}</p>
+            <p className="text-red-500 text-xs sm:text-sm">{errors.password.message}</p>
           )}
         </div>
         <Button
@@ -85,7 +94,7 @@ export const LoginForm = () => {
         >
           {isPending ? "Login..." : "Login"}
         </Button>
-        {isError && <div className="text-red-500">{error.message}</div>}
+        {isError && <div className="text-red-500 text-xs sm:text-sm">{error.message}</div>}
       </div>
     </form>
   );
