@@ -12,7 +12,7 @@ export const ThemeToggle = () => {
 
   if (!isMounted) {
     return (
-      <Button className="w-9 h-9" disabled size="icon" variant="outline" />
+      <Button className="w-9 h-9 rounded-full" disabled size="icon" variant="outline" />
     );
   }
 
@@ -27,7 +27,7 @@ export const ThemeToggle = () => {
       }
       size="icon"
       variant="outline"
-      className="w-9 h-9"
+      className="w-9 h-9 rounded-full"
     >
       {resolvedTheme === "dark" || theme === "dark" ? (
         <Icons.sun className="h-4 w-4 transition-all" />
