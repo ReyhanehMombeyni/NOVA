@@ -53,7 +53,7 @@ export const UserMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="outline-none">
-        <Avatar className="h-9 w-9 bg-accent-foreground text-accent flex justify-center items-center font-semibold cursor-pointer">
+        <Avatar className="h-9 w-9 bg-primary text-primary-foreground flex justify-center items-center font-semibold cursor-pointer">
           {user.username ? user.username.slice(0, 2).toUpperCase() : "U"}
         </Avatar>
       </DropdownMenuTrigger>

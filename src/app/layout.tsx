@@ -49,7 +49,7 @@ export default function RootLayout({
       className={`${robotoSans.variable} ${montserrat.variable} ${robotoMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300">
+      <body className="min-h-full flex flex-col transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="system" disableTransitionOnChange enableSystem>
           <QueryProvider>
             {children}

@@ -1,8 +1,9 @@
+import { Header } from "./components/home-cmp";
 
 export default function Home() {
   return (
-    <main className="flex flex-col flex-1 items-center justify-center p-5 md:px-10">
-      Hello Baby!
+    <main className="flex flex-col flex-1 items-center">
+      <Header />
     </main>
   );
 }
