@@ -8,7 +8,7 @@ import { Button } from "@/components/ui";
 export const Header = () => {
   return (
     <header className="h-80 md:h-110 w-full bg-primary text-primary-foreground">
-      <div className="container relative mx-auto h-full w-full">
+      <div className="relative mx-auto h-full w-full">
         <div className="pointer-events-none absolute left-0 top-0 z-10 hidden h-full w-1/3 md:block lg:w-1/4">
           <Image
             src={Men}
