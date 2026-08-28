@@ -34,7 +34,7 @@ export const ProductCard = ({ title, price, brand, rating, image }: ProductProps
                 </div>
                 <div className="flex justify-between items-center">
                     <p className="text-sm md:text-base">${price}</p>
-                    <Link href="/products" className="text-xs md:text-sm text-blue-400 hover:text-blue-300">see detail & buy</Link>
+                    <Link href="/products" className="text-xs md:text-sm text-blue-400 hover:text-blue-300">see more & buy</Link>
                 </div>
             </div>
         </div>

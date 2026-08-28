@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProductCard } from "../shared";
+import { ProductCard } from "@/components/shared/ProductCard";
 import imageProduct from '@/../public/images/products/product1.png'
 
 const products = [{

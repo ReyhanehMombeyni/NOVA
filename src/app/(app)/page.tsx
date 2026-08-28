@@ -1,5 +1,5 @@
 import { CollectionBanner } from "@/components/shared";
-import { Header, CategoriesSection, Arrivals } from "./components/home-cmp";
+import { Header, CategoriesSection, Arrivals, Comments } from "./components/home-cmp";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <CategoriesSection />
       <Arrivals />
       <CollectionBanner />
+      <Comments />
     </main>
   );
 }
