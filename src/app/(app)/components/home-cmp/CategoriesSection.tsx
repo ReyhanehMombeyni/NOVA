@@ -23,7 +23,7 @@ const categories = [{
 export const CategoriesSection = () => {
     
     return (
-        <section className="w-full h-40 md:h-50 bg-secondary text-secondary-foreground"> 
+        <section className="w-full h-40 md:h-50 bg-muted text-muted-foreground"> 
             <div className="text-left p-4 w-fit text-xs md:text-sm">SHOP BY CATEGORIES</div>
             <div className="w-full overflow-x-auto">
             <ul className="h-fit w-max min-w-full flex justify-center px-5 pb-2 gap-5 md:gap-20 md:px-10">

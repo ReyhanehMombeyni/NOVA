@@ -8,7 +8,7 @@ import { Button } from "@/components/ui";
 
 export const CollectionBanner = () => {
     return (
-        <section className="h-60 md:h-110 w-full bg-popover text-popover-foreground">
+        <section className="h-60 md:h-110 w-full bg-secondary text-secondary-foreground">
             <div className="relative mx-auto h-full w-full">
                     <div className="h-full">
                         <div className="flex justify-between mx-auto max-w-lg md:max-w-4xl text-6xl md:text-[10rem] px-5 font-heading font-black w-full opacity-10">
