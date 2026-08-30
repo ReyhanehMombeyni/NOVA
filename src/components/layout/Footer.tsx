@@ -34,7 +34,7 @@ export const Footer = () => {
                         </li>)}
                 </ul>
                 <p className="text-sm font-mono xl:max-w-xl xl:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quae ut sit molestiae expedita nemo blanditiis. Libero quos ut a, at sint sequi atque, aperiam qui labore assumenda, vitae repudiandae?</p>
-                <Logo />
+                <Logo size="lg" />
             </div>
             <div className="border-t text-center pt-5 text-xs">
                 &copy; { year } NOVA. All rights reserved.

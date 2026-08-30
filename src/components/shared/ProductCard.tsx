@@ -15,8 +15,8 @@ interface ProductProps {
 
 export const ProductCard = ({ title, price, brand, rating, image }: ProductProps) => {
     return (
-        <div className="flex flex-col gap-1 bg-card text-card-foreground min-w-35 h-70 md:min-w-60 md:h-110 rounded-xl shadow-lg">
-            <div className="relative w-full h-55 md:h-90 rounded-t-xl overflow-hidden">
+        <div className="flex flex-col gap-1 bg-card text-card-foreground w-full h-90 sm:h-95 md:h-100 xl:h-105 rounded-xl shadow-lg">
+            <div className="relative w-full h-70 sm:h-74 md:h-79 xl:h-84 rounded-t-xl overflow-hidden">
                 <Image
                     src={image}
                     alt="product image"

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ProductCard } from "@/components/shared/ProductCard";
 import imageProduct from '@/../public/images/products/product1.png'
 
-const products = [{
+export const productsData = [{
     id: 1,
     title: 'product1',
     price: 19.98,
@@ -64,7 +64,7 @@ export const Arrivals = () => {
             </div>
             <div className="w-full overflow-x-auto px-4 pb-4 flex items-center gap-3">
                 {
-                    products.map((product) => <ProductCard key={product.id} {...product} />)
+                    productsData.map((product) => <div key={product.id} className="min-w-35 sm:min-w-40 md:min-w-45 xl:min-w-50"><ProductCard {...product} /></div>)
                 }
             </div>
         </section>
