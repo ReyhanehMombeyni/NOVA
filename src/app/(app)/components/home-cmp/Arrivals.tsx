@@ -1,8 +1,18 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/shared/ProductCard";
 import imageProduct from '@/../public/images/products/product1.png'
+import { StaticImageData } from "next/image";
 
-export const productsData = [{
+export interface ProductProps {
+    id: number;
+    title: string;
+    price: number;
+    brand: string;
+    rating: number;
+    image: StaticImageData;
+}
+
+export const productsData: ProductProps[] = [{
     id: 1,
     title: 'product1',
     price: 19.98,

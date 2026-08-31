@@ -41,7 +41,7 @@ export const UserMenu = () => {
 
   if (!isAuthenticated || !user) {
     return (
-      <Button asChild variant="default" size="sm">
+      <Button variant="default" size="sm">
         <Link href="/auth/login" className="flex items-center gap-2 h-9">
           <Icons.login className="h-4 w-4" />
           <span>Login</span>

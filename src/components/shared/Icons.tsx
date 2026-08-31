@@ -15,7 +15,10 @@ import {
   LogInIcon,
   EyeIcon,
   EyeOff,
-  ChevronDown
+  ChevronDown,
+  Star,
+  Minus,
+  Plus
 } from "lucide-react";
 
 export const Icons = {
@@ -41,4 +44,7 @@ export const Icons = {
   eyeIcon: EyeIcon,
   eyeOff: EyeOff,
   chevronDown: ChevronDown,
+  star: Star,
+  minus: Minus,
+  plus: Plus
 };

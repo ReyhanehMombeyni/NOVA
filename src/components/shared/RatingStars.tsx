@@ -16,3 +16,4 @@ export const RatingStars = ({rating}: {rating: number}) => {
     </div>
   )
 }
+
