@@ -21,7 +21,7 @@ export const CollectionBanner = () => {
                           <h2 className="text-base md:text-3xl xl:text-6xl pt-5 xl:pt-10 font-semibold">Autumn Collection</h2>
                           <h3 className="text-xs md:text-sm xl:text-xl pt-2 opacity-90">A New Season for Your Style!</h3>
                           <p className="text-[8px] opacity-90 max-w-40 md:max-w-full md:text-xs xl:text-sm xl:font-mono pt-2">The Latest Fall Trends, Right Here! Refresh Your Fall Style...</p>
-                          <Button variant="outline" size="xs" className="mt-3 rounded-sm md:text-lg md:font-normal md:px-6 md:py-5" asChild>
+                          <Button variant="outline" size="xs" className="mt-3 rounded-sm md:text-lg md:font-normal md:px-6 md:py-5">
                             <Link href="/products">Buy Now</Link>
                           </Button>
                         </div>

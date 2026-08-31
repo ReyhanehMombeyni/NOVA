@@ -29,7 +29,7 @@ export const Header = () => {
             <h1 className="text-2xl pt-5 font-heading font-bold">NOVA E-Commerce</h1>
             <h3 className="text-lg font-mono font-semibold pt-2 opacity-90">Wear Your Style</h3>
             <p className="text-md opacity-90">Be yourself! Be Bold!</p>
-            <Button variant="outline" size="lg" className="mt-3 rounded-sm" asChild>
+            <Button variant="outline" size="lg" className="mt-3 rounded-sm">
               <Link href="/products">Shop Now</Link>
             </Button>
         </div>
